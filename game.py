@@ -1,27 +1,32 @@
-# 1 - Import library
-import pygame
-from pygame.locals import *
-
-# 2 - Initialize the game
-pygame.init()
-width, height = 640, 480
-screen=pygame.display.set_mode((width, height))
-
-# 3 - Load images
-player = pygame.image.load("resources/images/dude.png")
-
-# 4 - keep looping through
-while 1:
-    # 5 - clear the screen before drawing it again
-    screen.fill(0)
-    # 6 - draw the screen elements
-    screen.blit(player, (100,100))
-    # 7 - update the screen
-    pygame.display.flip()
-    # 8 - loop through the events
-    for event in pygame.event.get():
-        # check if the event is the X button 
-        if event.type==pygame.QUIT:
-            # if it is quit the game
-            pygame.quit() 
-            exit(0) 
+print('Welcome to AskPython Quiz')
+answer=input('Are you ready to play the Quiz ? (yes/no) :')
+score=0
+total_questions=3
+ 
+if answer.lower()=='yes':
+    answer=input('Question 1: What is your Favourite programming language?')
+    if answer.lower()=='python':
+        score += 1
+        print('correct')
+    else:
+        print('Wrong Answer :(')
+ 
+ 
+    answer=input('Question 2: Do you follow any author on AskPython? ')
+    if answer.lower()=='yes':
+        score += 1
+        print('correct')
+    else:
+        print('Wrong Answer :(')
+ 
+    answer=input('Question 3: What is the name of your favourite website for learning Python?')
+    if answer.lower()=='askpython':
+        score += 1
+        print('correct')
+    else:
+        print('Wrong Answer :(')
+ 
+print('Thankyou for Playing this small quiz game, you attempted',score,"questions correctly!")
+mark=(score/total_questions)*100
+print('Marks obtained:',mark)
+print('BYE!')
